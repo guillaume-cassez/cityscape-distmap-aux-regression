@@ -1,0 +1,11 @@
+# Backups (kept locally, never published)
+*.bak_*
+*.bak_v1
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+
+# Local build artifacts
+*.zip

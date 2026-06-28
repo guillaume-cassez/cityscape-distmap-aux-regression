@@ -1,0 +1,26 @@
+% Float placement (App. A uses \begin{table}[H]) and pretty rules — kept here
+% because pandoc applies either YAML header-includes OR -H, not both.
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{booktabs}
+
+% Robust rendering of the inline Unicode superscripts used in the Markdown
+% (e.g. "6×10⁻⁵"): map them to LaTeX so the build does not depend on the main
+% font carrying every glyph (XeLaTeX + Liberation Serif drops U+207B etc.).
+% The math symbols actually used inline (± × − ≈ ≤ ≥ α Δ →) ARE in Liberation
+% Serif, so only the super/subscripts need mapping.
+\usepackage{newunicodechar}
+\newunicodechar{⁻}{\textsuperscript{\textminus}}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+% Consensus veto notation "C′⊘B" uses U+2298 (CIRCLED DIVISION SLASH), which
+% Liberation Serif lacks — map it to the standard LaTeX math symbol \oslash.
+\newunicodechar{⊘}{\ensuremath{\oslash}}

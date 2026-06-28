@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+title: "Distance-Map Auxiliary Regression for Full-Resolution Cityscapes Segmentation: When Dice Helps and When It Doesn't"
+message: "If you use this work, please cite it as below."
+type: software
+authors:
+  - given-names: Guillaume
+    family-names: Cassez
+    email: cassez.guillaume@gmail.com
+    website: "https://guillaume-cassez.fr"
+    orcid: "https://orcid.org/0009-0007-0987-3931"
+repository-code: "https://github.com/guillaume-cassez/cityscape-distmap-aux-regression"
+version: 0.1.0
+license: MIT
+date-released: "2026-06-28"
+keywords:
+  - Cityscapes
+  - semantic segmentation
+  - distance transform
+  - signed distance transform
+  - auxiliary regression
+  - DistMap
+  - Dice loss
+  - ConvNeXt-V2
+  - UPerNet
+  - full-resolution training
+  - urban scene understanding
+  - autonomous driving
+  - deep learning
+  - computer vision
+abstract: >-
+  A reproducible 2x2 ablation of a distance-map (signed-distance-transform)
+  auxiliary-regression head crossed with the Dice term for full-resolution
+  semantic segmentation on Cityscapes (1024x2048, ConvNeXt-V2-Base + UPerNet;
+  four loss variants A: CE, B: CE+Dice, C': CE+Dice+DistMap, D': CE+DistMap, each
+  x 3 seeds x 160 epochs). The DistMap head regresses the per-class normalised
+  signed distance transform of the ground-truth mask by a masked MSE at a fixed
+  weight (the 2-D transcription of the BRATS Distance-Map Auxiliary Loss) and is
+  dropped at inference. At epoch 10 the joint variant C' leads (+2.26 mIoU over
+  B); at epoch 160 the no-Dice variant D' has the highest mean mIoU
+  (81.64 +/- 0.27). mIoU significance uses a paired image-bootstrap over the 500
+  val images as the pre-specified primary test (3-seed paired-t as robustness):
+  under Holm, D' beats the field-standard CE+Dice baseline B (p=0.046) and the
+  joint variant C' (p=0.001). The contour metrics split along the Dice axis
+  (non-Dice A, D' lead Boundary F1; Dice B, C' lead Trimap IoU by ~1.5), and --
+  unlike the Kervadec boundary loss (the sibling study) -- the DistMap auxiliary
+  does not sharpen contours beyond plain CE (A and D' tied on Boundary F1). The
+  most actionable finding is methodological: short-epoch ablations reverse the
+  converged ranking. A connected-component consensus filter adapted from BRATS is
+  fully characterised: the canonical pairing C'-veto-B (the DistMap-with-Dice
+  variant C' vetoed by the CE+Dice baseline B -- the most faithful 2-D
+  transcription of BRATS DistMap-veto-Baseline) prunes -18.1% of fragments at no
+  mIoU cost and no meaningful boundary-quality cost (a pure spatial-coherence
+  gain). The mIoU is validated bit-for-bit against the official cityscapesscripts.
+  See CHANGELOG.md for details.

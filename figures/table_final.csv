@@ -1,0 +1,5 @@
+variant,name,mIoU_mean,mIoU_ci,bnd_f1_mean,bnd_f1_ci,trimap_mean,trimap_ci
+A,CE,81.28,0.53,77.24,0.16,52.17,0.14
+B,CE+Dice,81.09,0.74,76.39,0.24,53.82,0.36
+C′,CE+Dice+DistMap,80.89,0.93,76.43,0.11,53.84,0.18
+D′,CE+DistMap,81.64,0.27,77.17,0.32,52.32,0.36
