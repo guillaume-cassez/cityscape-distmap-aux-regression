@@ -5,6 +5,7 @@
 Code, configs, per-class metrics, figures, and paper source for a controlled 2×2 loss ablation on Cityscapes at native resolution (1024×2048) with ConvNeXt-V2-Base + UPerNet, isolating a **distance-map (signed-distance-transform) auxiliary-regression head** crossed with the Dice term.
 
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21006235.svg)](https://doi.org/10.5281/zenodo.21006235)
 
 > **TL;DR.** Add a per-class signed-distance-transform (SDT) auxiliary-regression head to a strong CE + Dice Cityscapes baseline and the converged-mIoU ranking flips between short and long training. At 160 epochs the **no-Dice variant D′ (CE + DistMap) has the highest mean mIoU (81.64 ± 0.27)** and significantly beats both the CE + Dice baseline and the joint variant on a paired image-bootstrap. The DistMap auxiliary, unlike a boundary *loss*, does **not** sharpen contours beyond plain CE — its gain is representation shaping, not edge sharpening. A connected-component consensus filter (canonical **C′⊘B**) prunes **−18.1 % of spurious fragments at no mIoU cost** and boundary-neutral.
 
@@ -203,11 +204,12 @@ python scripts/paper1_figures.py            # -> figures/fig_perclass.{png,pdf}
   author  = {Cassez, Guillaume},
   year    = {2026},
   version = {0.1.0},
+  doi     = {10.5281/zenodo.21006235},
   note    = {Independent research}
 }
 ```
 
-Concept DOI: minted on first Zenodo release (added here post-publication).
+**Concept DOI** (always resolves to the latest version): [10.5281/zenodo.21006235](https://doi.org/10.5281/zenodo.21006235). This **v0.1.0** release: [10.5281/zenodo.21006236](https://doi.org/10.5281/zenodo.21006236).
 
 ---
 

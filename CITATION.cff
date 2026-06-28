@@ -9,6 +9,7 @@ authors:
     website: "https://guillaume-cassez.fr"
     orcid: "https://orcid.org/0009-0007-0987-3931"
 repository-code: "https://github.com/guillaume-cassez/cityscape-distmap-aux-regression"
+doi: 10.5281/zenodo.21006235
 version: 0.1.0
 license: MIT
 date-released: "2026-06-28"
