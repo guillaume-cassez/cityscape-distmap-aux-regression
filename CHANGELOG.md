@@ -5,6 +5,21 @@ All notable changes to this record are documented here. This project follows
 the concept DOI (minted on the first Zenodo release) always resolves to the
 latest version; earlier version DOIs remain permanently citable.
 
+
+## v0.1.3 — 2026-11-01 (author roles — programme clarification 2026-09-22)
+
+Version: v0.1.3 — next version of concept [10.5281/zenodo.21006235](https://doi.org/10.5281/zenodo.21006235); version DOI assigned at publication.
+
+Stanislas Larnier joins this paper in **second position**, per the programme-level clarification of 2026-09-22 (Guillaume Cassez lead author; Stanislas Larnier secondary — formulation of the research questions, methodological guidance, careful reviews) and its 2026-10-04 application to the sister Cityscapes papers 3 and 4 (revision of Guillaume). Versions deposited before 2026-11-01 carry Guillaume Cassez alone.
+
+- **paper.md / paper_fr.md**: two-author block under the title and an Author contributions / Contributions des auteurs section — same wording as the sister papers of this programme (BRATS 1–5, Cityscapes 3–4). No number, table or figure is modified.
+- **Closing line (EN/FR)**: the code-source link now points to this repository (cityscape-distmap-aux-regression); it pointed to the paper-2 repository since the June release (pre-existing inconsistency, corrected in this revision).
+- **README.md**: by-line, BibTeX author field, co-author note.
+- **CITATION.cff**: second author added (no e-mail, per the programme
+  publication rule).
+- **paper.pdf / paper_fr.pdf**: rebuilt from the updated sources with the
+  unchanged build recipe (build.sh).
+
 ## v0.1.0 — 2026-06-28
 
 First public release of the **DistMap auxiliary-regression** arm of the mirrored

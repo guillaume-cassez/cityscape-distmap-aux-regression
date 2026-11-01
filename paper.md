@@ -7,6 +7,15 @@ header-includes:
 
 # Distance-Map Auxiliary Regression for Full-Resolution Cityscapes Segmentation: When Dice Helps and When It Doesn't
 
+**Guillaume Cassez · Stanislas Larnier**
+
+Independent research
+
+*Guillaume Cassez* — [ORCID 0009-0007-0987-3931](https://orcid.org/0009-0007-0987-3931) · `cassez.guillaume@gmail.com` · [guillaume-cassez.fr](https://guillaume-cassez.fr)  
+*Stanislas Larnier* — `stanislaslarnier@gmail.com` · [HAL stanislas-larnier](https://cv.hal.science/stanislas-larnier)
+
+*Author list established 2026-11-01, per the programme-level clarification of 2026-09-22 (Guillaume Cassez lead author, Stanislas Larnier in second position — secondary roles: formulation of the research questions, methodological guidance, careful reviews) and its 2026-10-04 application to the sister Cityscapes papers 3 and 4. Versions of this paper deposited on Zenodo before 2026-11-01 carry Guillaume Cassez alone. No number in the manuscript is modified.*
+
 *Cityscapes val · ConvNeXt-V2-Base + UPerNet · 4 loss variants × 3 seeds × 160 epochs at 1024×2048*
 
 ---
@@ -293,7 +302,7 @@ We provide a reproducible 2×2 ablation of the CE / Dice / DistMap-auxiliary des
 
 The connected-component consensus filter completes the picture: the canonical **C′⊘B** veto — the most faithful 2-D transcription of the BRATS DistMap⊘Baseline rule — prunes −18.1 % of spurious fragments at zero mIoU cost and zero meaningful boundary-quality cost, a pure spatial-coherence gain invisible to dataset-level mIoU. Together with the boundary-loss sibling, this supports a single cross-domain thesis: **a geometry-aware model (a DistMap auxiliary here, a Kervadec boundary loss there) combined with a consensus veto removes fragmentation at no mIoU cost — and the result holds in 2-D (Cityscapes) and in 3-D (BRATS).** The most actionable practical finding is again methodological: short-epoch ablations are systematically misleading on this task, reversing the ranking that holds at 160 epochs.
 
-All code, configs, per-class metrics for the twelve runs, pre-computed distance maps, and the figure-generation pipeline are released at **github.com/guillaume-cassez/city-scape**. A companion page with the paper and figures will live at **guillaume-cassez.fr/voiture-autonome/cityscapes/distance-map-regression/**.
+All code, configs, per-class metrics for the twelve runs, pre-computed distance maps, and the figure-generation pipeline are released at **github.com/guillaume-cassez/cityscape-distmap-aux-regression**. A companion page with the paper and figures will live at **guillaume-cassez.fr/voiture-autonome/cityscapes/distance-map-regression/**.
 
 ---
 
@@ -391,4 +400,10 @@ Bottom 5 classes where D′ regresses vs B at epoch 160:
 
 ---
 
-*Manuscript — 2026-06-28. Source code, configs, per-class metrics, and figure-generation script: github.com/guillaume-cassez/city-scape. Author: Guillaume Cassez, independent researcher, guillaume-cassez.fr — currently looking for ML / computer vision engineering opportunities.*
+## Author contributions
+
+**Guillaume Cassez** (lead author): study design, model training, evaluations and analyses, manuscript writing. **Stanislas Larnier**: formulation of the research questions, methodological guidance, careful reviews of successive drafts of the paper. Both authors approved the final version and the author order.
+
+---
+
+*Manuscript — 2026-06-28 (author roles per the 2026-09-22 clarification, see note above). Source code, configs, per-class metrics, and figure-generation script: github.com/guillaume-cassez/cityscape-distmap-aux-regression. Authors: Guillaume Cassez (lead author) and Stanislas Larnier — independent researchers, guillaume-cassez.fr — currently looking for ML / computer vision engineering opportunities.*

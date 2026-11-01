@@ -4,6 +4,8 @@
 
 Code, configs, per-class metrics, figures, and paper source for a controlled 2×2 loss ablation on Cityscapes at native resolution (1024×2048) with ConvNeXt-V2-Base + UPerNet, isolating a **distance-map (signed-distance-transform) auxiliary-regression head** crossed with the Dice term.
 
+**Guillaume Cassez** · **Stanislas Larnier** — independent research · ORCID [0009-0007-0987-3931](https://orcid.org/0009-0007-0987-3931) (G.C.) · [HAL stanislas-larnier](https://cv.hal.science/stanislas-larnier) (S.L.) · [guillaume-cassez.fr](https://guillaume-cassez.fr/voiture-autonome/)
+
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21006235.svg)](https://doi.org/10.5281/zenodo.21006235)
 
@@ -201,9 +203,9 @@ python scripts/paper1_figures.py            # -> figures/fig_perclass.{png,pdf}
 @misc{cassez2026distmap,
   title   = {Distance-Map Auxiliary Regression for Full-Resolution Cityscapes
              Segmentation: When Dice Helps and When It Doesn't},
-  author  = {Cassez, Guillaume},
+  author  = {Cassez, Guillaume and Larnier, Stanislas},
   year    = {2026},
-  version = {0.1.0},
+  version = {0.1.3},
   doi     = {10.5281/zenodo.21006235},
   note    = {Independent research}
 }
@@ -216,6 +218,8 @@ python scripts/paper1_figures.py            # -> figures/fig_perclass.{png,pdf}
 ## About the author
 
 I'm **Guillaume Cassez** ([ORCID 0009-0007-0987-3931](https://orcid.org/0009-0007-0987-3931)), and I built this project in 2026 as **independent research** (outside any institutional framework). It is part of a mirrored series on geometry-aware training signals for segmentation: the **DistMap auxiliary-regression arm** here, and the **Kervadec boundary-loss sibling** ([guillaume-cassez/city-scape](https://github.com/guillaume-cassez/city-scape)), under an identical backbone, protocol and consensus filter.
+
+**Co-author.** Stanislas Larnier is the second author of this paper (formulation of the research questions, methodological guidance, careful reviews of successive drafts) — see the *Author contributions* section of [paper.pdf](paper.pdf). Per the programme-level clarification of 2026-09-22, Guillaume Cassez is the lead author.
 
 **I'm currently looking for opportunities**, ideally:
 

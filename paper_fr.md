@@ -7,9 +7,14 @@ header-includes:
 
 # Régression auxiliaire de carte de distance pour la segmentation Cityscapes pleine résolution : quand le Dice aide, et quand il ne sert plus à rien
 
-**Guillaume Cassez**
+**Guillaume Cassez · Stanislas Larnier**
 
-Recherche indépendante · [ORCID 0009-0007-0987-3931](https://orcid.org/0009-0007-0987-3931) · `cassez.guillaume@gmail.com` · [guillaume-cassez.fr](https://guillaume-cassez.fr)
+Recherche indépendante
+
+*Guillaume Cassez* — [ORCID 0009-0007-0987-3931](https://orcid.org/0009-0007-0987-3931) · `cassez.guillaume@gmail.com` · [guillaume-cassez.fr](https://guillaume-cassez.fr)  
+*Stanislas Larnier* — `stanislaslarnier@gmail.com` · [HAL stanislas-larnier](https://cv.hal.science/stanislas-larnier)
+
+*Liste d'auteurs établie le 2026-11-01, conformément à la clarification programmatique du 2026-09-22 (Guillaume Cassez auteur principal, Stanislas Larnier en deuxième position — rôles secondaires : formulation des questions de recherche, conseils méthodologiques, relectures) et à son application aux papiers Cityscapes 3 et 4 du 2026-10-04. Les versions de ce papier déposées sur Zenodo avant le 2026-11-01 portent Guillaume Cassez seul. Aucun chiffre du manuscrit n'est modifié.*
 
 *Cityscapes val · ConvNeXt-V2-Base + UPerNet · 4 variantes de loss × 3 seeds × 160 epochs à 1024×2048*
 
@@ -297,7 +302,7 @@ On fournit une ablation 2×2 reproductible de l'espace de design CE / Dice / aux
 
 Le filtre de consensus par composantes connexes complète l'image : le veto canonique **C′⊘B** — la transcription 2D la plus fidèle de la règle BRATS DistMap⊘Baseline — élague −18,1 % des fragments parasites à coût mIoU nul et coût qualité-de-bord nul significatif, gain de cohérence spatiale pur invisible au mIoU au niveau dataset. Avec le papier sœur loss boundary, cela soutient une thèse cross-domaine unique : **un modèle conscient de la géométrie (un auxiliaire DistMap ici, une loss boundary de Kervadec là) combiné à un veto de consensus retire la fragmentation à coût mIoU nul — et le résultat tient en 2D (Cityscapes) et en 3D (BRATS).** La trouvaille pratique la plus actionnable est de nouveau méthodologique : les ablations à epochs courts sont systématiquement trompeuses sur cette tâche, inversant le ranking qui tient à 160 epochs.
 
-Tout le code, les configs, les métriques par classe des douze runs, les distance maps précomputées et le pipeline de génération des figures sont publiés sur **github.com/guillaume-cassez/city-scape**. Une page compagnon avec le paper et les figures vivra sur **guillaume-cassez.fr/voiture-autonome/cityscapes/distance-map-regression/**.
+Tout le code, les configs, les métriques par classe des douze runs, les distance maps précomputées et le pipeline de génération des figures sont publiés sur **github.com/guillaume-cassez/cityscape-distmap-aux-regression**. Une page compagnon avec le paper et les figures vivra sur **guillaume-cassez.fr/voiture-autonome/cityscapes/distance-map-regression/**.
 
 ---
 
@@ -395,4 +400,10 @@ Bottom 5 classes où D′ régresse vs B à epoch 160 :
 
 ---
 
-*Manuscrit — 2026-06-28. Code source, configs, métriques par classe et script de génération des figures : github.com/guillaume-cassez/city-scape. Auteur : Guillaume Cassez, chercheur indépendant, guillaume-cassez.fr — actuellement à la recherche d'opportunités d'ingénieur ML / vision par ordinateur.*
+## Contributions des auteurs
+
+**Guillaume Cassez** (auteur principal) : conception de l'étude, entraînement des modèles, évaluations et analyses, rédaction du manuscrit. **Stanislas Larnier** : formulation des questions de recherche, conseils méthodologiques, relectures attentives des versions successives du papier. Les deux auteurs ont approuvé la version finale et l'ordre des auteurs.
+
+---
+
+*Manuscrit — 2026-06-28 (voir note d'auteurs ci-dessus — clarification 2026-09-22). Code source, configs, métriques par classe et script de génération des figures : github.com/guillaume-cassez/cityscape-distmap-aux-regression. Auteurs : Guillaume Cassez (auteur principal) et Stanislas Larnier — chercheurs indépendants, guillaume-cassez.fr — actuellement à la recherche d'opportunités d'ingénieur ML / vision par ordinateur.*
